@@ -289,9 +289,13 @@
 }).call(window.Page = window.Page || {});
 	    
 function checkPass() {
-		console.log("Checking Password");
 		passwordValue = document.getElementById("usrPsw").value;
 		console.log(passwordValue);
+		if (code[0] == "usr" && code[1] == passwordValue) {
+		    	console.log("We're in!");
+		    } else {
+		    	console.log("Youn dun goofed!");
+		    }
 	}
 </script>
     
