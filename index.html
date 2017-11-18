@@ -69,12 +69,18 @@
                             <img id="scanned-img" src="" width="320" height="240">
                         </div>
                         <div class="caption">
-                            <h3>Scanned result</h3>
+                            <h3>Password Protection</h3>
                             <p id="scanned-QR"></p>
                             <input type="password" id="usrPsw" value="noInput">
-                            <button onclick="checkPass()">Check Password</button>
+			    <button onclick="checkPass()">Check Password</button>
+			    <br>
+			    <h3>User Data</h3>
+			    <br>
+			    <p id="userName"></p>
 			    <br>
 			    <p id="balance"></p>
+			    <br>
+			    <p id="loginNumber"></p>
                         </div>
                     </div>
                 </div>
@@ -289,8 +295,12 @@ function checkPass() {
 		console.log(passwordValue);
 		if (code[0] == "usr" && code[1] == passwordValue) {
 		    	console.log("We're in!");
-			var balanceDisplay = code[2];
+			var userNameDisplay = "Welcome, " + code[4] + "1";
+			var balanceDisplay = "Balance:" + code[2];
+			var loginNumberDisplay = "Login Number: " + code[3];
+			document.getElementById("userName").innerHTML = userNameDisplay;
 			document.getElementById("balance").innerHTML = balanceDisplay;
+			document.getElementById("loginNumber").innerHTML = loginNumberDisplay;
 		    } else {
 		    	console.log("Youn dun goofed!");
 		    }
