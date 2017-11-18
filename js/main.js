@@ -36,11 +36,15 @@
 					sQ.text(text);
 					
 					
+					
 					//SPOON STUFF
 					var QR = text;
-					console.log(QR);
 					var code = QR.split(" ");
 					console.log(code);
+					var codeType = code[0];
+					if (codeType == "usr"){
+						console.log(codeType);
+					}
 					
 					
 					
