@@ -34,7 +34,16 @@
 				resultFunction: function(text, imgSrc) {
 					si.attr('src', imgSrc);
 					sQ.text(text);
-					console.log(text);
+					
+					
+					//SPOON STUFF
+					var QR = text;
+					console.log(QR);
+					var code = QR.split(" ");
+					console.log(code);
+					
+					
+					
 					sl.fadeOut(150, function() {
 						sl.fadeIn(150);
 					});
