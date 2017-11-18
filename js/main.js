@@ -37,14 +37,19 @@
 					
 					
 					
+					
+					
 					//SPOON STUFF
 					var QR = text;
 					var code = QR.split(" ");
 					console.log(code);
 					var codeType = code[0];
+					console.log(codeType);
 					if (codeType == "usr"){
-						console.log(codeType);
+						console.log("It's a user card!");
 					}
+					
+					
 					
 					
 					
