@@ -265,11 +265,7 @@
 			}
 		}
 	}
-	    
-	function checkPass() {
-		console.log("Checking Password");
-	}
-		
+	    		
 	if (typeof MediaStreamTrack.getSources !== 'undefined') {
 		var videoSelect = document.querySelector('select#cameraId');
 		$(videoSelect).change(function(event) {
@@ -284,6 +280,10 @@
 		document.querySelector('select#cameraId').remove();
 	}
 }).call(window.Page = window.Page || {});
+	    
+function checkPass() {
+		console.log("Checking Password");
+	}
     </script>
     
     
