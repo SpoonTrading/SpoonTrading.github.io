@@ -43,10 +43,13 @@
 					var QR = text;
 					var code = QR.split(" ");
 					console.log(code);
-					var codeType = code[0];
-					console.log(codeType);
-					if (codeType == "usr"){
+					console.log(code[0]);
+					if (code[0] == "usr") {
 						console.log("It's a user card!");
+					} else if (code[0] == "spoon") {
+						console.log("It's a spoon!");
+					} else {
+						console.log("It's unrecognized!");
 					}
 					
 					
