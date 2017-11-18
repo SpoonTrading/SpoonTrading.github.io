@@ -73,6 +73,8 @@
                             <p id="scanned-QR"></p>
                             <input type="password" id="usrPsw" value="noInput">
                             <button onclick="checkPass()">Check Password</button>
+			    <br>
+			    <p id="balance"></p>
                         </div>
                     </div>
                 </div>
@@ -287,6 +289,8 @@ function checkPass() {
 		console.log(passwordValue);
 		if (code[0] == "usr" && code[1] == passwordValue) {
 		    	console.log("We're in!");
+			var balanceDisplay = code[2];
+			document.getElementById("balance").innerHTML = balanceDisplay;
 		    } else {
 		    	console.log("Youn dun goofed!");
 		    }
