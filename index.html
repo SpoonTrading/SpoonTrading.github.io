@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Scanner demo</title>
+        <title>Online Spoon Trading</title>
         <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">
         .scanner-laser{
@@ -38,17 +38,17 @@
     </head>
     <body>       
         <div class="page-header">
-            <h1 style="margin-left:10px;">WebCodeCam V 1.0.0 - BareCode and Qr-Code reader jQuery plugin<br>
-            <small>download from:
-            <a href="https://github.com/andrastoth/WebCodeCam" target="_blank"> GitHub </a> OR
-            <a href="http://www.jsclasses.org/package/385-JavaScript-barcode-and-qr-code-scanner.html" target="_blank"> JSclasses </a>
+            <h1 style="margin-left:10px;">Online Spoon Trading<br>
+            <small>Hybrid physical-digital currency justified by actual products
             </small>
+	    <small> By Peter			    
+	    </small>
             </h1>
         </div>
         <div id="QR-Code" class="container" style="width:100%">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="display: inline-block;width: 100%;">
-                    <h4 style="width:50%;float:left;">WebCodeCam.js Demonstration</h4>
+                    <h4 style="width:50%;float:left;">Spoon Wallet</h4>
                     <div style="width:50%;float:right;margin-top: 5px;margin-bottom: 5px;text-align: right;">
                     <select id="cameraId" class="form-control" style="display: inline-block;width: auto;"></select>
                     <button id="save" data-toggle="tooltip" title="Image shoot" type="button" class="btn btn-info btn-sm disabled"><span class="glyphicon glyphicon-picture"></span></button>
@@ -69,12 +69,8 @@
                 </div>
                 <div class="col-md-6" style="text-align: center;">
                     <div id="result" class="thumbnail">
-                        <div class="well" style="position: relative;">
-                            <img id="scanned-img" src="" width="320" height="240">
-                        </div>
                         <div class="caption">
-                            <h3>Scanned result</h3>
-                            <p id="scanned-QR"></p>
+                            <h3>User Details</h3>
                             <input type="password" id="usrPsw" value="noInput">
                             <button onclick="checkPass()">Check Password</button>
                         </div>
@@ -104,7 +100,6 @@
 		sl = $('.scanner-laser'),
 		pl = $('#play'),
 		si = $('#scanned-img'),
-		sQ = $('#scanned-QR'),
 		sv = $('#save'),
 		sp = $('#stop'),
 		spAll = $('#stopAll'),
@@ -139,7 +134,6 @@
 				autoBrightnessValue: 120,
 				resultFunction: function(text, imgSrc) {
 					si.attr('src', imgSrc);
-					sQ.text(text);
 					
 					
 					
@@ -177,21 +171,17 @@
 					alert(message);
 				}
 			});
-			sQ.text('Scanning ...');
 			sv.removeClass('disabled');
 			sp.click(function(event) {
 				sv.addClass('disabled');
-				sQ.text('Stopped');
 				decoder.data().plugin_WebCodeCam.cameraStop();
 			});
 			spAll.click(function(event) {
 				sv.addClass('disabled');
-				sQ.text('Stopped');
 				decoder.data().plugin_WebCodeCam.cameraStopAll();
 			});
 		} else {
 			sv.removeClass('disabled');
-			sQ.text('Scanning ...');
 			decoder.data().plugin_WebCodeCam.cameraPlay();
 		}
 	});
