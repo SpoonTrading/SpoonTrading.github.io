@@ -76,7 +76,7 @@
                             <h3>Scanned result</h3>
                             <p id="scanned-QR"></p>
                             <input type="password" id="myPsw" value="psw123">
-                            <button onclick="passwordCall()">Check Password</button>
+                            <button onclick="checkPass()">Check Password</button>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,12 @@
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/qrcodelib.js"></script>
 <script type="text/javascript" src="js/WebCodeCam.js"></script>
-<!-- <script type="text/javascript" src="js/main.js"></script> -->
+	
+	
+	
+	
+	
+<!-- Main QR Scanning Script -->
     <script>
     (function(window) {
 	'use strict';
@@ -259,6 +264,10 @@
 				videoSelect.appendChild(option);
 			}
 		}
+	}
+	    
+	function checkPass() {
+		console.log("Checking Password");
 	}
 		
 	if (typeof MediaStreamTrack.getSources !== 'undefined') {
