@@ -75,7 +75,7 @@
                         <div class="caption">
                             <h3>Scanned result</h3>
                             <p id="scanned-QR"></p>
-                            <input type="password" id="myPsw" value="psw123">
+                            <input type="password" id="usrPsw" value="noInput">
                             <button onclick="checkPass()">Check Password</button>
                         </div>
                     </div>
@@ -98,6 +98,7 @@
 <!-- Main QR Scanning Script -->
     <script>
     var code = "Unscanned";
+    var passwordValue = "noInput";
     
     var decoder = $('#qr-canvas'),
 		sl = $('.scanner-laser'),
@@ -289,8 +290,9 @@
 	    
 function checkPass() {
 		console.log("Checking Password");
+		passwordValue = document.getElementById("usrPsw").value;
+		console.log(passwordValue);
 	}
-    </script>
-    
+</script>
     
 </html>
