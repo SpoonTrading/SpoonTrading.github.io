@@ -97,9 +97,8 @@
 	
 <!-- Main QR Scanning Script -->
     <script>
-    (function(window) {
-	'use strict';
-	var decoder = $('#qr-canvas'),
+    
+    var decoder = $('#qr-canvas'),
 		sl = $('.scanner-laser'),
 		pl = $('#play'),
 		si = $('#scanned-img'),
@@ -120,6 +119,12 @@
 		gr = $('#grayscale'),
 		grv = $('#grayscale-value');
 		$('[data-toggle="tooltip"]').tooltip();
+	    
+    (function(window) {
+	'use strict';
+	
+	 //OLD DECODER SPOT   
+	    
 	sl.css('opacity', .5);
 	pl.click(function() {
 		if (typeof decoder.data().plugin_WebCodeCam == "undefined") {
