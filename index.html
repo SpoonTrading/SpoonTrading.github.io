@@ -97,6 +97,7 @@
 	
 <!-- Main QR Scanning Script -->
     <script>
+    var code = "Unscanned";
     
     var decoder = $('#qr-canvas'),
 		sl = $('.scanner-laser'),
@@ -145,7 +146,7 @@
 					
 					//SPOON STUFF
 					var QR = text;
-					var code = QR.split(" ");
+					code = QR.split(" ");
 					console.log(code);
 					console.log(code[0]);
 					if (code[0] == "usr") {
