@@ -66,24 +66,10 @@
                         <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
                         <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
                     </div>
-                    <div class="well" style="position: relative;" >
-                        <label id="zoom-value" width="100">Zoom: 2</label>
-                        <input type="range" id="zoom" value="20" min="10" max="30" onchange="Page.changeZoom();"/>
-                        <label id="brightness-value" width="100">Brightness: 0</label>
-                        <input type="range" id="brightness" value="0" min="0" max="128" onchange="Page.changeBrightness();"/>
-                        <label id="contrast-value" width="100">Contrast: 0</label>
-                        <input type="range" id="contrast" value="0" min="0" max="64" onchange="Page.changeContrast();"/>
-                        <label id="threshold-value" width="100">Threshold: 0</label>
-                        <input type="range" id="threshold" value="0" min="0" max="512" onchange="Page.changeThreshold();"/>
-                        <label id="sharpness-value" width="100">Sharpness: off</label>
-                        <input type="checkbox" id="sharpness" onchange="Page.changeSharpness();"/>
-                        <label id="grayscale-value" width="100">grayscale: off</label>
-                        <input type="checkbox" id="grayscale" onchange="Page.changeGrayscale();"/>
-                    </div>
                 </div>
                 <div class="col-md-6" style="text-align: center;">
                     <div id="result" class="thumbnail">
-                        <div class="well" style="position: relative;display: inline-block;">
+                        <div class="well" style="position: relative;">
                             <img id="scanned-img" src="" width="320" height="240">
                         </div>
                         <div class="caption">
