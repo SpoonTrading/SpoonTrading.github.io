@@ -34,6 +34,7 @@
 				resultFunction: function(text, imgSrc) {
 					si.attr('src', imgSrc);
 					sQ.text(text);
+					console.log(text);
 					sl.fadeOut(150, function() {
 						sl.fadeIn(150);
 					});
