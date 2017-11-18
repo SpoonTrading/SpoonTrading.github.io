@@ -166,6 +166,11 @@
 			}
 		}
 	}
+	
+	function checkPass(){
+		console.log("Checking Password");
+	}
+	
 	if (typeof MediaStreamTrack.getSources !== 'undefined') {
 		var videoSelect = document.querySelector('select#cameraId');
 		$(videoSelect).change(function(event) {
