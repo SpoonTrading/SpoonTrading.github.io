@@ -74,7 +74,7 @@
                             <input type="password" id="usrPsw" value="noInput">
 			    <button onclick="checkPass()">Check Password</button>
 			    <br>
-			    <h3>User Data</h3>
+			    <h3 id="userDataReadout"></h3>
 			    <br>
 			    <p id="userName"></p>
 			    <br>
@@ -101,6 +101,9 @@
 	
 <!-- Main QR Scanning Script -->
     <script>
+	    
+    document.getElementById("userDataReadout").innerHTML = "Scan your User Code and confirm your password.";
+	    
     var code = "Unscanned";
     var passwordValue = "noInput";
     
@@ -295,8 +298,8 @@ function checkPass() {
 		console.log(passwordValue);
 		if (code[0] == "usr" && code[1] == passwordValue) {
 		    	console.log("We're in!");
-			var userNameDisplay = "Welcome, " + code[4] + "1";
-			var balanceDisplay = "Balance:" + code[2];
+			var userNameDisplay = "Welcome, " + code[4] + "!";
+			var balanceDisplay = "Balance: " + code[2];
 			var loginNumberDisplay = "Login Number: " + code[3];
 			document.getElementById("userName").innerHTML = userNameDisplay;
 			document.getElementById("balance").innerHTML = balanceDisplay;
