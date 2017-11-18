@@ -97,6 +97,7 @@
     <script>
     var code = "Unscanned";
     var passwordValue = "noInput";
+    var loggedIn = 0;
     
     var decoder = $('#qr-canvas'),
 		sl = $('.scanner-laser'),
@@ -284,11 +285,16 @@ function checkPass() {
 		passwordValue = document.getElementById("usrPsw").value;
 		console.log(passwordValue);
 		if (code[0] == "usr" && code[1] == passwordValue) {
-		    	console.log("We're in!");
+		    	loggedIn = 1;
+			document.write("<p>Balance: " + code[2] + "<br>Login Number: " + code[3] + "</p>"
 		    } else {
 		    	console.log("Youn dun goofed!");
 		    }
-	}
+}
+	    
+function logOut() {
+	loggedIn = 0;
+}
 </script>
     
 </html>
