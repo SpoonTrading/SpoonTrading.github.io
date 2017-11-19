@@ -180,18 +180,20 @@
 						spoonLoginNumber = code[4];
 						spoonScanned = 1;
 						
-						blockChain.push(code[5]);
-						blockChain.push(code[6]);
-						blockChain.push(code[7]);
+						for (var i = 0; i < code.length; i++){
+							blockChain.push(code[i]);
+						}
+						
+						
 						
 						console.log(blockChain);
 					} else if (code[0] == "blockChain") {
 						
 						document.getElementById("userDataReadout").innerHTML = "Blockchain detected. Added to balance.";
 						
-						blockChain.push(code[1]);
-						blockChain.push(code[2]);
-						blockChain.push(code[3]);
+						for (var i = 5; i < code.length; i++){
+							blockChain.push(code[i]);
+						}
 						
 						console.log(blockChain);
 						balance += spoonValue;
