@@ -172,7 +172,7 @@
 					
 					if (code[0] == "usr") {
 						
-						balance = code[2];
+						balance = parseInt(code[2]);
 						loginNumber = code[3];
 						userName = code[4];
 						userCardScanned = 1;
@@ -185,7 +185,7 @@
 							document.getElementById("userDataReadout").innerHTML = "You already scanned a spoon code! Confirm its blockchain before scanning more.";
 						}
 						document.getElementById("userDataReadout").innerHTML = "Spoon Code detected. Scan blockain to confirm.";
-						spoonValue = code[1];
+						spoonValue = parseInt(code[1]);
 						spoonUser = code[2];
 						spoonID = code[3];
 						spoonLoginNumber = code[4];
