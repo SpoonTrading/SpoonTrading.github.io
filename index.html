@@ -173,15 +173,15 @@
 						userCardScanned = 1;
 					} else if (code[0] == "spoon") {
 						
-						document.getElementById("Spoon code scanned. Please scan blockchain codes to confirm.");
+						document.getElementById("userDataReadout").innerHTML = "Spoon Code detected. Scan blockain codes A and B to confirm.";
 						
 					} else if (code[0] == "blockChainA") {
 						
-						document.getElementById("Blockchain code A scanned. Please scan blockchain code B to confirm.");
+						document.getElementById("userDataReadout").innerHTML = "Blockchain code A detected. Scan blockchain code B to confirm.";
 						
 					} else if (code[0] == "blockChainB") {
 						
-						document.getElementById("Blockchain code B scanned. Please scan blockchain code A to confirm.");
+						document.getElementById("userDataReadout").innerHTML = "Blockchain code B detected. Scan blockchain code A to confirm.";
 						
 					} else {
 						console.log("It's unrecognized!");
