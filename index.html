@@ -167,12 +167,23 @@
 					code = QR.split(" ");
 					console.log(code);
 					console.log(code[0]);
+					
+					
+					
 					if (code[0] == "usr") {
+						
 						balance = code[2];
 						loginNumber = code[3];
 						userName = code[4];
 						userCardScanned = 1;
-					} else if (code[0] == "spoon") {						
+						
+						
+						
+					} else if (code[0] == "spoon") {
+						
+						if (spoonScanned = 1){
+							document.getElementById("userDataReadout").innerHTML = "You already scanned a spoon code! Confirm its blockchain before scanning more.";
+						}
 						document.getElementById("userDataReadout").innerHTML = "Spoon Code detected. Scan blockain to confirm.";
 						spoonValue = code[1];
 						spoonUser = code[2];
@@ -184,25 +195,33 @@
 							blockChain.push(code[i]);
 						}						
 						console.log(blockChain);
+						
+						
+						
 					} else if (code[0] == "blockChain") {
 						
-						document.getElementById("userDataReadout").innerHTML = "Blockchain detected. Added to balance.";
+						if (spoonScanned = 0){
+							document.getElementById("userDataReadout").innerHTML = "Scan Spoon Code before scanning blockchain.";
+						} else {
+							document.getElementById("userDataReadout").innerHTML = "Blockchain detected. Spoons added to balance. You may scan more Spoon Codes.";
 						
-						for (var i = 1; i < code.length; i++){
-							blockChain.push(code[i]);
-						}
+							for (var i = 1; i < code.length; i++){
+								blockChain.push(code[i]);
+							}
 						
-						console.log(blockChain);
-						balance += spoonValue;
-						var balanceDisplay = "Balance: " + balance;
-						document.getElementById("balance").innerHTML = balanceDisplay;
+							console.log(blockChain);
+							balance += spoonValue;
+							var balanceDisplay = "Balance: " + balance;
+							spoonScanned = 0;
+							document.getElementById("balance").innerHTML = balanceDisplay;
 						
-						
-					} else {
+							
+							
+						} else {
 						
 						document.getElementById("userDataReadout").innerHTML = "Unrecognized QR code. Please make sure you're scanning the right document.";
 						
-					}
+						}
 					
 					
 					
