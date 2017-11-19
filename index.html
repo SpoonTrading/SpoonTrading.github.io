@@ -180,12 +180,9 @@
 						spoonLoginNumber = code[4];
 						spoonScanned = 1;
 						
-						for (var i = 5; i < code.length; i++){
+						for (var i = 1; i < code.length; i++){
 							blockChain.push(code[i]);
-						}
-						
-						
-						
+						}						
 						console.log(blockChain);
 					} else if (code[0] == "blockChain") {
 						
