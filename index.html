@@ -105,12 +105,17 @@
     document.getElementById("userDataReadout").innerHTML = "Scan your User Code and confirm your password.";
 	    
     var code = "Unscanned";
+    var blockChain = "Empty";
     var passwordValue = "noInput";
     var balance = 0;
     var loginNumber = 0;
     var loggedIn = 0;
     var userCardScanned = 0;
     var userName = "default";
+    var spoonValue = 0;
+    var spoonUser = "default";
+    var spoonID = 0;
+    var spoonLoginNumber = 0;
     
     var decoder = $('#qr-canvas'),
 		sl = $('.scanner-laser'),
@@ -156,7 +161,7 @@
 					
 					
 					
-					//SPOON STUFF
+					//SCAN CODE
 					var QR = text;
 					code = QR.split(" ");
 					console.log(code);
@@ -167,9 +172,20 @@
 						userName = code[4];
 						userCardScanned = 1;
 					} else if (code[0] == "spoon") {
-						console.log("It's a spoon!");
+						
+						document.getElementById("Spoon code scanned. Please scan blockchain codes to confirm.";
+						
+					} else if (code[0] == "blockChainA") {
+						
+						document.getElementById("Blockchain code A scanned. Please scan blockchain code B to confirm.";
+						
+					} else if (code[0] == "blockChainB") {
+						
+						document.getElementById("Blockchain code B scanned. Please scan blockchain code A to confirm.";
+						
 					} else {
 						console.log("It's unrecognized!");
+						
 					}
 					
 					
@@ -312,11 +328,11 @@ function checkPass() {
 			document.getElementById("userName").innerHTML = userNameDisplay;
 			document.getElementById("balance").innerHTML = balanceDisplay;
 			document.getElementById("loginNumber").innerHTML = loginNumberDisplay;
-			document.getElementById("userDataReadout").innerHTML = "User Data";
+			document.getElementById("userDataReadout").innerHTML = "Scan Spoon Cards to add to balance.";
 		    } else if (userCardScanned == 1){
 		    	document.getElementById("userDataReadout").innerHTML = "Incorrect Password!";
 		    } else {
-		    	document.getElementById("userDataReadout").innerHTML = "Scan your user card before entering your password!";
+		    	document.getElementById("userDataReadout").innerHTML = "Scan your User Card before entering your password!";
 		    }
 	}
 </script>
