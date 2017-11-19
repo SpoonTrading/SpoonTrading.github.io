@@ -181,7 +181,7 @@
 						
 					} else if (code[0] == "spoon") {
 						
-						if (spoonScanned = 1){
+						if (spoonScanned == 1){
 							document.getElementById("userDataReadout").innerHTML = "You already scanned a spoon code! Confirm its blockchain before scanning more.";
 						}
 						document.getElementById("userDataReadout").innerHTML = "Spoon Code detected. Scan blockain to confirm.";
@@ -200,7 +200,7 @@
 						
 					} else if (code[0] == "blockChain") {
 						
-						if (spoonScanned = 0){
+						if (spoonScanned == 0){
 							document.getElementById("userDataReadout").innerHTML = "Scan Spoon Code before scanning blockchain.";
 						} else {
 							document.getElementById("userDataReadout").innerHTML = "Blockchain detected. Spoons added to balance. You may scan more Spoon Codes.";
