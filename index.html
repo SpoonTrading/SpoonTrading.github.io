@@ -183,18 +183,22 @@
 						
 						if (spoonScanned == 1){
 							document.getElementById("userDataReadout").innerHTML = "You already scanned a spoon code! Confirm its blockchain before scanning more.";
-						}
-						document.getElementById("userDataReadout").innerHTML = "Spoon Code detected. Scan blockain to confirm.";
-						spoonValue = parseInt(code[1]);
-						spoonUser = code[2];
-						spoonID = code[3];
-						spoonLoginNumber = code[4];
-						spoonScanned = 1;
+						} else if (userCardScanned == 0{
+								document.getElementById("userDataReadout").innerHTML = "Scan your User Code and enter your password first!";   
+							} else {
+							document.getElementById("userDataReadout").innerHTML = "Spoon Code detected. Scan blockain to confirm.";
+							spoonValue = parseInt(code[1]);
+							spoonUser = code[2];
+							spoonID = code[3];
+							spoonLoginNumber = code[4];
+							spoonScanned = 1;
 						
-						for (var i = 1; i < code.length; i++){
-							blockChain.push(code[i]);
-						}						
-						console.log(blockChain);
+							for (var i = 1; i < code.length; i++){
+								blockChain.push(code[i]);
+							}						
+							console.log(blockChain);
+						}
+						
 						
 						
 						
@@ -202,6 +206,8 @@
 						
 						if (spoonScanned == 0){
 							document.getElementById("userDataReadout").innerHTML = "Scan Spoon Code before scanning blockchain.";
+						} else if (userCardScanned == 0){
+							document.getElementById("userDataReadout").innerHTML = "Scan your User Code and enter your password first!";
 						} else {
 							document.getElementById("userDataReadout").innerHTML = "Blockchain detected. Spoons added to balance. You may scan more Spoon Codes.";
 						
