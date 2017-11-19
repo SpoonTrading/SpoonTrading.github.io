@@ -174,6 +174,10 @@
 					} else if (code[0] == "spoon") {
 						
 						document.getElementById("userDataReadout").innerHTML = "Spoon Code detected. Scan blockain codes A and B to confirm.";
+						spoonValue = code[1];
+						spoonUser = code[2];
+						spoonID = code[3];
+						spoonLoginNumber = code[4];
 						
 					} else if (code[0] == "blockChainA") {
 						
