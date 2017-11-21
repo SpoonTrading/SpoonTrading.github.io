@@ -55,21 +55,21 @@
             </div>
             <div class="panel-body">
                 <div class="col-md-6" style="text-align: center;">
-		           <div class="thumbnail">
-                        		<canvas id="qr-canvas" width="320" height="240"></canvas>
-                        		<div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
-                        		<div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
-                        		<div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
-                        		<div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
-			    <div class="caption">
-				    <h3>User Actions</h3>
-		    	</div>
+                    <div class="well" style="position: relative;display: inline-block;">
+                        <canvas id="qr-canvas" width="320" height="240"></canvas>
+                        <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
+                        <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
+                        <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
+                        <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
+                    </div>
+		    <div class="caption">
+			    <h3>User Actions</h3>
 		    </div>
                 </div>
                 <div class="col-md-6" style="text-align: center;">
                     <div id="result" class="thumbnail">
                         <div class="well" style="position: relative;">
-                            	<img id="scanned-img" src="" width="320" height="240">			     
+                            <img id="scanned-img" src="" width="320" height="240">
                         </div>
                         <div class="caption">
                             <h3>Password Protection</h3>
@@ -251,21 +251,17 @@
 					alert(message);
 				}
 			});
-
 			sv.removeClass('disabled');
 			sp.click(function(event) {
 				sv.addClass('disabled');
-
 				decoder.data().plugin_WebCodeCam.cameraStop();
 			});
 			spAll.click(function(event) {
 				sv.addClass('disabled');
-
 				decoder.data().plugin_WebCodeCam.cameraStopAll();
 			});
 		} else {
 			sv.removeClass('disabled');
-
 			decoder.data().plugin_WebCodeCam.cameraPlay();
 		}
 	});
