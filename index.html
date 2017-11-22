@@ -108,18 +108,26 @@
     document.getElementById("userDataReadout").innerHTML = "Scan your User Code and confirm your password.";
 	    
     var code = "Unscanned";
+    
     var blockChain = [];
+    var userChain = [];
+    var IDChain  = [];
+    var loginChain = [];
+    var timeChain = [];
+    
     var passwordValue = "noInput";
     var balance = 0;
     var loginNumber = 0;
     var loggedIn = 0;
     var userCardScanned = 0;
     var userName = "default";
+	    
     var spoonValue = 0;
     var spoonUser = "default";
     var spoonID = 0;
     var spoonLoginNumber = 0;
     var spoonScanned = 0;
+    var spoonTime = 0;
     
     var decoder = $('#qr-canvas'),
 		sl = $('.scanner-laser'),
@@ -194,12 +202,15 @@
 							spoonUser = code[2];
 							spoonID = code[3];
 							spoonLoginNumber = code[4];
+							spoonTime = code[5];
 							spoonScanned = 1;
 						
-							for (var i = 2; i < code.length; i++){
-								blockChain.push(code[i]);
+							for (var i = 2; i < code.length; i+=4){
+								userChain.push(code[i]);
+								IDChain.push(code[i+1]);
+								loginChain.push(code[i+2]);
+								timeChain.push(code[i+3]);
 							}						
-							console.log(blockChain);
 						}
 						
 						
@@ -214,11 +225,13 @@
 						} else {
 							document.getElementById("userDataReadout").innerHTML = "Blockchain detected. Spoons added to balance. You may scan more Spoon Codes.";
 						
-							for (var i = 1; i < code.length; i++){
-								blockChain.push(code[i]);
+							for (var i = 1; i < code.length; i+=4){
+								userChain.push(code[i]);
+								IDChain.push(code[i+1]);
+								loginChain.push(code[i+2]);
+								timeChain.push(code[i+3]);
 							}
-						
-							console.log(blockChain);
+							
 							balance += spoonValue;
 							var balanceDisplay = "Balance: " + balance;
 							spoonScanned = 0;
