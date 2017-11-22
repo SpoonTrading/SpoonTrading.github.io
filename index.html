@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Spoon Wallet</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">
         .scanner-laser{
@@ -177,7 +176,6 @@
 					var QR = text;
 					code = QR.split(" ");
 					console.log(code);
-					console.log(code[0]);
 					
 					
 					
@@ -372,7 +370,6 @@
 	    
 function checkPass() {
 		passwordValue = document.getElementById("usrPsw").value;
-		console.log(passwordValue);
 		if (code[0] == "usr" && code[1] == passwordValue) {
 			loggedIn = 1;
 			var userNameDisplay = "Welcome, " + userName + "!";
